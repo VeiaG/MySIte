@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Tetris"
+	})
+	<body>
+	
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="tetris-block">
+					<div class="tetris-block__container">
+						<div class="tetris-block__text">
+							<div class="tetris-block__title">
+								<h1>Тетріс</h1>
+							</div>
+							<div class="tools-block__description">
+								<p>Вирішив написати тетріс шо. </p>
+							</div>
+						</div>
+						<div class="game-wrapper" id="tetris-game">
+
+						</div>
+					</div>
+				</div>
+				
+				
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

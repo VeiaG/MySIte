@@ -1,0 +1,174 @@
+.bdradius-block{
+    @extend %block;
+    //background
+    &::before{
+        background: 
+        radial-gradient(
+            800px circle at 80% 20%, rgba(25, 255, 36, 0.05),transparent 100%
+        ),
+        radial-gradient(
+            900px circle at 20% 80%,rgba(48, 29, 255, 0.05) , transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(black 80%, transparent);
+        mask-image: inear-gradient(black 80%, transparent);
+        @extend %block-bg;
+    }
+    &::after{
+        @extend %block-line;
+    }
+    &__text{
+        @extend %block-text;
+    }
+    &__title{
+        @extend %block-title;
+    }
+    &__description{
+        @extend %block-description;
+    }
+    
+}
+
+.bd-radius{
+    margin-top:64px;
+    &__block{
+        position: relative;
+    }
+    
+    &__main{
+        @extend %card_mimic;
+        position: relative;
+        margin:auto;
+        max-width:$containerWidth - 400px;
+        height:400px;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        //transition: all 0.3s ease 0s;
+    } 
+    &__code{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        width:50%;
+        min-height:30%;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.025);
+        font-size:20px;
+        padding:16px 24px;
+        transition: all 0.3s ease 0s;
+        //hover effects
+        &:hover{
+            transform: scale(1.01);
+            transition: all 0.3s ease 0s;
+        }
+    }
+    &__input {
+		position:absolute;
+		width:64px;
+        height:36px;
+		&:nth-of-type(1){
+            top:0;
+            left:0;
+        }
+        &:nth-of-type(2){
+            top:0;
+            right:0;
+        }
+        &:nth-of-type(3){
+            bottom:0;
+            right:0;
+        }
+        &:nth-of-type(4){
+            bottom:0;
+            left:0;
+        }
+
+		input {
+			height: 100%;
+			color: #fff;
+            @extend %card_mimic;
+			font-size: 18px;
+			width: 100%;
+			text-align: center;
+		}
+		/* Chrome, Safari, Edge, Opera */
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+		}
+		/* Firefox */
+		input[type=number] {
+		    -moz-appearance: textfield;
+		}
+	}
+    $sliderWidth :90px ;
+    $sliderPadding: 16px;
+    $sliderHeight : 64px;
+    &__slider{
+        width:$sliderWidth;
+        position:absolute;
+        height:$sliderHeight;
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        background: transparent; /* Grey background */
+        outline: none; /* Remove outline */
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height:16px;
+            border-radius: 50%; 
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            &:hover{
+                background: rgba(255, 255, 255, 0.5);
+                transition: all 0.3s ease 0s;
+            }
+        }
+        
+        &::-moz-range-thumb {
+            appearance: none;
+            width: 16px;
+            height:16px;
+            border-radius: 50%; 
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            &:hover{
+                background: rgba(255, 255, 255, 0.5);
+                transition: all 0.3s ease 0s;
+            }
+
+        }
+
+
+        
+        &:nth-of-type(1){
+            top:math.div((-$sliderHeight),2)+$sliderPadding;
+            left:$sliderPadding;
+            transform-origin: 0 50%;
+            transform: rotate(45deg) ;
+            
+        }
+        &:nth-of-type(2){
+            top:math.div((-$sliderHeight),2)+$sliderPadding;
+            right:-$sliderWidth+$sliderPadding;
+            transform-origin: 0% 50%;
+            transform: rotate(135deg);
+        }
+        &:nth-of-type(3){
+            bottom:math.div((-$sliderHeight),2)+$sliderPadding;
+            right:-$sliderWidth+$sliderPadding;
+            transform-origin: 0% 50%;
+            transform: rotate(-135deg);
+        }
+        &:nth-of-type(4){
+            bottom:math.div((-$sliderHeight),2)+$sliderPadding;
+            left:$sliderPadding;
+            transform-origin: 0% 50%;
+            transform: rotate(-45deg);
+        }
+    }
+}

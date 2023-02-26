@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"CSS border-radius"
+	})
+	<body>
+	
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="bdradius-block">
+					<div class="bdradius-block__container">
+						<div class="bdradius-block__text">
+							<div class="bdradius-block__title">
+								<h1>CSS border radius generator</h1>
+							</div>
+							<div class="bdradius-block__description">
+								<p>Веб-інструмент, що дозволяє генерувати CSS код для створення закруглених кутів на блоках та елементах вашого веб-сайту. </p>
+							</div>
+						</div>
+						
+						<div class="bd-radius">
+							<div class="bd-radius__block">
+								<div class="bd-radius__input">
+									<input  autocomplete="off" type="number" name="n1" value="0" id="n1">
+								</div>
+
+								<div class="bd-radius__input">
+									<input  autocomplete="off" type="number" name="n2" value="0" id="n2">
+								</div>
+
+								<div class="bd-radius__input">
+									<input  autocomplete="off" type="number" name="n3" value="0" id="n3">
+								</div>
+
+								<div class="bd-radius__input">
+									<input  autocomplete="off" type="number" name="n4" value="0" id="n4">
+								</div>
+								<div class="bd-radius__main" id="rd">
+									<input type="range" id="s1" min="0" max="200" value ="0" class="bd-radius__slider">
+									<input type="range" id="s2" min="0" max="200" value ="0" class="bd-radius__slider">
+									<input type="range" id="s3" min="0" max="200" value ="0" class="bd-radius__slider">
+									<input type="range" id="s4" min="0" max="200" value ="0" class="bd-radius__slider">
+									<div class="bd-radius__code">
+										<p id="bd-code"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+		<script>
+			var n1,n2,n3,n4,rd;
+			var s1,s2,s3,s4;
+			n1 = document.getElementById("n1");
+			n2 = document.getElementById("n2");
+			n3 = document.getElementById("n3");
+			n4 = document.getElementById("n4");
+			s1 = document.getElementById("s1");
+			s2 = document.getElementById("s2");
+			s3 = document.getElementById("s3");
+			s4 = document.getElementById("s4");
+			rd = document.getElementById("rd");
+			var globalEditN = 0;
+
+			var bdcode = document.getElementById("bd-code");
+			function updateBorders(){
+			rd.style.borderTopLeftRadius = (n1.value >200 ? 200 : n1.value) + "px";
+			rd.style.borderTopRightRadius = (n2.value >200 ? 200 : n2.value) + "px";
+			rd.style.borderBottomRightRadius = (n3.value >200 ? 200 : n3.value)+ "px";
+			rd.style.borderBottomLeftRadius = (n4.value >200 ? 200 : n4.value) + "px";
+			bdcode.textContent = "border-radius : " + n1.value + "px " + n2.value + "px " + n3.value + "px " + n4.value + "px ;";
+			}
+			if(n1 != null){
+			n1.addEventListener('change', un1);
+			n2.addEventListener('change', un2);
+			n3.addEventListener('change', un3);
+			n4.addEventListener('change', un4);
+			
+			s1.addEventListener('input', us1);
+			s2.addEventListener('input', us2);
+			s3.addEventListener('input', us3);
+			s4.addEventListener('input', us4);
+			function enableTrans(){
+				rd.style.transition = "all 0.3s ease 0s"
+			}
+			function disableTrans(){
+				rd.style.transition = ""
+			}
+			function us1(){
+				globalEditN = (globalEditN == 0) ? 1 : (globalEditN == 1) ? 1 : 5;
+				disableTrans();
+				if(globalEditN == 1){
+				n1.value = s1.value;
+				n2.value = s1.value;
+				n3.value = s1.value;
+				n4.value = s1.value;
+				//sliders
+				s2.value = s1.value;
+				s3.value = s1.value;
+				s4.value = s1.value;
+				}
+				else{
+					n1.value = s1.value;
+				}
+				updateBorders();
+			}
+			function us2(){
+				globalEditN = (globalEditN == 0) ? 2 : (globalEditN == 2) ? 2 : 5;
+				disableTrans();
+				if(globalEditN == 2){
+				n1.value = s2.value;
+				n2.value = s2.value;
+				n3.value = s2.value;
+				n4.value = s2.value;
+				//sliders
+				s1.value = s2.value;
+				s3.value = s2.value;
+				s4.value = s2.value;
+				}
+				else{
+					n2.value = s2.value;
+				}
+				updateBorders();
+			}
+			function us3(){
+				globalEditN = (globalEditN == 0) ? 3 : (globalEditN == 3) ? 3 : 5;
+				disableTrans();
+				if(globalEditN == 3){
+				n1.value = s3.value;
+				n2.value = s3.value;
+				n3.value = s3.value;
+				n4.value = s3.value;
+				//sliders
+				s1.value = s3.value;
+				s2.value = s3.value;
+				s4.value = s3.value;
+				}
+				else{
+					n3.value = s3.value;
+				}
+				updateBorders();
+			}
+			function us4(){
+				globalEditN = (globalEditN == 0) ? 4 : (globalEditN == 4) ? 4 : 5;
+				disableTrans();
+				if(globalEditN == 4){
+				n1.value = s4.value;
+				n2.value = s4.value;
+				n3.value = s4.value;
+				n4.value = s4.value;
+				//sliders
+				s1.value = s4.value;
+				s2.value = s4.value;
+				s3.value = s4.value;
+				}
+				else{
+					n4.value = s4.value;
+				}
+				updateBorders();
+			}
+
+
+			function un1(){
+				globalEditN = (globalEditN == 0) ? 1 : (globalEditN == 1) ? 1 : 5;
+				enableTrans();
+				if(globalEditN == 1){
+				n2.value = n1.value;
+				n3.value = n1.value;
+				n4.value = n1.value;
+				//sliders
+				s1.value = n1.value;
+				s2.value = n1.value;
+				s3.value = n1.value;
+				s4.value = n1.value;
+				}
+				else{
+					s1.value = n1.value;
+				}
+				updateBorders();
+			}
+			function un2(){
+				globalEditN = (globalEditN == 0) ? 2 : (globalEditN == 2) ? 2 : 5;
+				enableTrans();
+				if(globalEditN == 2){
+				n1.value = n2.value;
+				n3.value = n2.value;
+				n4.value = n2.value;
+				//sliders
+				s1.value = n2.value;
+				s2.value = n2.value;
+				s3.value = n2.value;
+				s4.value = n2.value;
+				}
+				else{
+					s2.value = n2.value;
+				}
+				updateBorders();
+			}
+			function un3(){
+				globalEditN = (globalEditN == 0) ? 3 : (globalEditN == 3) ? 3 : 5;
+				enableTrans();
+				if(globalEditN == 3){
+				n1.value = n3.value;
+				n2.value = n3.value;
+				n4.value = n3.value;
+				//sliders
+				s1.value = n3.value;
+				s2.value = n3.value;
+				s3.value = n3.value;
+				s4.value = n3.value;
+				}
+				else{
+					s3.value = n3.value;
+				}
+				updateBorders();
+			}
+			function un4(){
+				globalEditN = (globalEditN == 0) ? 4 : (globalEditN == 4) ? 4 : 5;
+				enableTrans();
+				if(globalEditN == 4){
+				n1.value = n4.value;
+				n2.value = n4.value;
+				n3.value = n4.value;
+				//sliders
+				s1.value = n4.value;
+				s2.value = n4.value;
+				s3.value = n4.value;
+				s4.value = n4.value;
+				}
+				else{
+					s4.value = n4.value;
+				}
+				updateBorders();
+			}
+			
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Tools"
+	})
+	<body>
+	
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="tools-block">
+					<div class="tools-block__container">
+						<div class="tools-block__text">
+							<div class="tools-block__title">
+								<h1>ІНСТРУМЕНТИ</h1>
+							</div>
+							<div class="tools-block__description">
+								<p>Цей відділ сайту містить різні інструменти для веб-розробника, які можуть знадобитись під час проектування, розробки та тестування веб-сайтів. </p>
+							</div>
+						</div>
+						<div class="cards" id="cards">
+							<div class="cards__block">
+								@@include('html/_card.htm',{
+									"title":"border-radius",
+									"description" : "CSS border-radius генератор.",
+									"image" : "img/border-radius.png",
+									"icon": "img/icons/border-radius.svg",
+									"href": "border-radius.html"
+									})
+								@@include('html/_card.htm',{
+									"title":"Flexbox Cheatsheet",
+									"description" : "Динамічна шпаргалка по Flexbox.",
+									"image" : "img/flexbox.png",
+									"icon": "img/icons/flexbox.svg",
+									"href": "flexbox-cheatsheet.html"
+									})
+								@@include('html/_card.htm',{
+									"title":"Tools",
+									"description" : "description",
+									"image" : "img/test.png",
+									"icon": "img/icons/border-radius.svg",
+									"href": "#"
+									})
+								@@include('html/_card.htm',{
+									"title":"Tools",
+									"description" : "description",
+									"image" : "img/ab2.png",
+									"icon": "img/icons/border-radius.svg",
+									"href": "#"
+									})
+								@@include('html/_card.htm',{
+									"title":"Tools",
+									"description" : "description",
+									"image" : "img/cover.jpg",
+									"icon": "img/icons/border-radius.svg",
+									"href": "#"
+									})
+								@@include('html/_card.htm',{
+									"title":"Tools",
+									"description" : "description",
+									"image" : "img/ab2.png",
+									"icon": "img/icons/border-radius.svg",
+									"href": "#"
+									})
+								@@include('html/_card.htm',{
+									"title":"Це я",
+									"description" : "рома",
+									"image" : "img/1.jpg",
+									"icon": "img/icons/border-radius.svg",
+									"href": "#"
+									})
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="__container" style="margin-top: 64px;">
+					Цей відділ сайту містить різні інструменти для веб-розробника, які можуть знадобитись під час проектування, розробки та тестування веб-сайтів. Наприклад, тут можуть бути доступні редактори коду, які дозволяють писати, редагувати та тестувати код безпосередньо на веб-сторінці, не виходячи з браузера. Також тут можуть бути доступні інструменти для вимірювання швидкості завантаження сторінок, перевірки сумісності з різними браузерами та при тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест тест
+				 </p>
+				
+				
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

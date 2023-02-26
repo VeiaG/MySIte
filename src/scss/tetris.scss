@@ -1,0 +1,28 @@
+.tetris-block{
+    @extend %block; 
+    //background
+    &::before{
+        background: 
+        radial-gradient(
+            800px circle at 80% 20%, rgba(255, 75, 25, 0.05),transparent 100%
+        ),
+        radial-gradient(
+            900px circle at 20% 80%,rgba(29, 255, 101, 0.05) , transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(black 80%, transparent);
+        mask-image: inear-gradient(black 80%, transparent);
+        @extend %block-bg;
+    }
+    &::after{
+        @extend %block-line;
+    }
+    &__text{
+        @extend %block-text;
+    }
+    &__title{
+        @extend %block-title;
+    }
+    &__description{
+        @extend %block-description;
+    }
+}

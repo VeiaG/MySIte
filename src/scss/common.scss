@@ -1,0 +1,52 @@
+%card_mimic{
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+}
+//block 
+%block{
+    padding-top:116px;
+    padding-bottom: 64px;
+    position: relative;
+}
+%block-bg{
+    
+    z-index: -1;
+	position: absolute;
+	top:0px;
+    bottom:0px;
+    left: 0px;
+	right: 0px;
+	content: "";
+	width:100%;
+    height: inherit;
+}
+%block-text{
+        padding:0 24px;
+}
+%block-title{
+    font-size:rem(48);
+    font-weight: 700;
+    display:flex;
+    justify-content: center;
+}
+%block-description{
+    margin-top:24px;
+    font-weight: 200;
+    text-align: center;
+}
+%block-line{
+    position: absolute;
+	left: 0px;
+	right: 0px;
+    bottom:0px;
+	height: 1px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	content: "";
+	max-width: rem($containerWidth);
+	margin: auto;
+}
+
+//body hide scrollbar TEMPORARY
+body::-webkit-scrollbar {
+    display: none;
+  }

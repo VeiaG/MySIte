@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"CSS border-radius"
+	})
+	<body>
+	
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="flb-block">
+					<div class="flb-block__container">
+						<div class="flb-block__text">
+							<div class="flb-block__title">
+								<h1>Flexbox Cheatsheet</h1>
+							</div>
+							<div class="flb-block__description">
+								<p>Веб-сторінка, яка надає детальну інформацію про всі властивості flexbox в CSS. </p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="flex-box">
+					<div class="flex-box__container">
+						<h1>Flex Контейнер</h1>
+					<h2>Display</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>display: flex;</p>
+							<img src="@img/flexbox/display_flex.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>display: inline-flex;</p>
+							<img src="@img/flexbox/display_inline-flex.png" alt="">
+						</div>
+					</div>
+
+					<h2>Flex flow (скорочення)</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>flex-flow: row nowrap;</p>
+							<p class="flex-box__details">(flex-direction flex-wrap)</p>	
+						</div>
+					</div>
+
+					<h2>Flex direction</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>flex-direction: row;</p>
+							<img src="@img/flexbox/row.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>flex-direction: row-reverse;</p>
+							<img src="@img/flexbox/row-reverse.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>flex-direction: column;</p>
+							<img src="@img/flexbox/column.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>flex-direction: column-reverse;</p>
+							<img src="@img/flexbox/column-reverse.png" alt="">
+						</div>
+					</div>
+					<h3>Спробуйте!</h3>
+					<div class="flex-try">
+						<div class="flex-try__buttons">
+							<button type="button" onclick="flD('row')">row</button>
+							<button type="button" onclick="flD('row-reverse')">row-reverse</button>
+							<button type="button" onclick="flD('column')">column</button>
+							<button type="button" onclick="flD('column-reverse')">column-reverse</button>
+						</div>
+						<div class="flex-try__block" id="flexD">
+							<div class="flex-try__item">Один</div>
+							<div class="flex-try__item">Два</div>
+							<div class="flex-try__item">Три</div>
+							<div class="flex-try__item">Чотири</div>
+						</div>
+					</div>
+					<h2>Flex wrap</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>flex-wrap: nowrap;</p>
+							<img src="@img/flexbox/nowrap.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>flex-wrap: wrap;</p>
+							<img src="@img/flexbox/wrap.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>flex-wrap: wrap-reverse;;</p>
+							<img src="@img/flexbox/wrap-reverse.png" alt="">
+						</div>
+					</div>
+					<h3>Спробуйте!</h3>
+					<div class="flex-try">
+						<div class="flex-try__buttons">
+							<button type="button" onclick="flW('nowrap')">nowrap</button>
+							<button type="button" onclick="flW('wrap')">wrap</button>
+							<button type="button" onclick="flW('wrap-reverse')">wrap-reverse</button>
+						</div>
+						<div class="flex-try__block" id="flexW">
+							<div class="flex-try__item">Один</div>
+							<div class="flex-try__item">Два</div>
+							<div class="flex-try__item">Три</div>
+							<div class="flex-try__item">Чотири</div>
+							<div class="flex-try__item">П'ять</div>
+							<div class="flex-try__item">Шість</div>
+							<div class="flex-try__item">Сім</div>
+							<div class="flex-try__item">Вісім</div>
+							<div class="flex-try__item">Дев'ять</div>
+							<div class="flex-try__item">Десять</div>
+							<div class="flex-try__item">Одинадцять</div>
+						</div>
+					</div>
+					<h2>Justify content</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>justify-content: flex-start;</p>
+							<img src="@img/flexbox/flex-start.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>justify-content: center;</p>
+							<img src="@img/flexbox/center.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>justify-content: flex-end;</p>
+							<img src="@img/flexbox/flex-end.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>justify-content: space-between;</p>
+							<img src="@img/flexbox/space-between.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>justify-content: space-around;</p>
+							<img src="@img/flexbox/space-around.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>justify-content: space-evenly;</p>
+							<img src="@img/flexbox/space-evenly.png" alt="">
+						</div>
+					</div>
+					<h3>Спробуйте!</h3>
+					<div class="flex-try">
+						<div class="flex-try__buttons">
+							<button type="button" onclick="flJ('flex-start')">flex-start</button>
+							<button type="button" onclick="flJ('center')">center</button>
+							<button type="button" onclick="flJ('flex-end')">flex-end</button>
+							<button type="button" onclick="flJ('space-between')">space-between</button>
+							<button type="button" onclick="flJ('space-around')">space-around</button>
+							<button type="button" onclick="flJ('space-evenly')">space-evenly</button>
+						</div>
+						<div class="flex-try__block" id="flexJ">
+							<div class="flex-try__item">Один</div>
+							<div class="flex-try__item">Два</div>
+							<div class="flex-try__item">Три</div>
+							<div class="flex-try__item">Чотири</div>
+						</div>
+					</div>
+					<h2>Align items</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>align-items: stretch;</p>
+							<img src="@img/flexbox/AIstretch.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-items: flex-start;</p>
+							<img src="@img/flexbox/AIflex-start.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-items: center;</p>
+							<img src="@img/flexbox/AIcenter.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-items: flex-end;</p>
+							<img src="@img/flexbox/AIflex-end.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-items: baseline;</p>
+							<img src="@img/flexbox/AIbaseline.png" alt="">
+						</div>	
+					</div>
+					<h3>Спробуйте!</h3>
+					<div class="flex-try">
+						<div class="flex-try__buttons">
+							<button type="button" onclick="flAI('stretch')">stretch</button>
+							<button type="button" onclick="flAI('flex-start')">flex-start</button>
+							<button type="button" onclick="flAI('center')">center</button>
+							<button type="button" onclick="flAI('flex-end')">flex-end</button>
+							<button type="button" onclick="flAI('baseline')">baseline</button>
+						</div>
+						<div class="flex-try__block" id="flexAI">
+							<div class="flex-try__item">Один</div>
+							<div class="flex-try__item">Два</div>
+							<div class="flex-try__item">Три</div>
+							<div class="flex-try__item">Чотири</div>
+						</div>
+					</div>
+					<h2>Align content</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>align-content: stretch;</p>
+							<img src="@img/flexbox/ACstretch.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-content: flex-start;</p>
+							<img src="@img/flexbox/ACflex-start.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-content: center;</p>
+							<img src="@img/flexbox/ACcenter.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-content: flex-end;</p>
+							<img src="@img/flexbox/ACflex-end.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-content: space-between;</p>
+							<img src="@img/flexbox/ACspace-between.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-content: space-around;</p>
+							<img src="@img/flexbox/ACspace-around.png" alt="">
+						</div>
+					</div>
+					<h3>Спробуйте!</h3>
+					<div class="flex-try">
+						<div class="flex-try__buttons">
+							<button type="button" onclick="flAC('stretch')">stretch</button>
+							<button type="button" onclick="flAC('flex-start')">flex-start</button>
+							<button type="button" onclick="flAC('center')">center</button>
+							<button type="button" onclick="flAC('flex-end')">flex-end</button>
+							<button type="button" onclick="flAC('space-between')">space-between</button>
+							<button type="button" onclick="flAC('space-around')">space-around</button>
+						</div>
+						<div class="flex-try__block" id="flexAC">
+							<div class="flex-try__item">Один</div>
+							<div class="flex-try__item">Два</div>
+							<div class="flex-try__item">Три</div>
+							<div class="flex-try__item">Чотири</div>
+							<div class="flex-try__item">П'ять</div>
+							<div class="flex-try__item">Шість</div>
+							<div class="flex-try__item">Сім</div>
+							<div class="flex-try__item">Вісім</div>
+							<div class="flex-try__item">Дев'ять</div>
+							<div class="flex-try__item">Десять</div>
+							<div class="flex-try__item">Одинадцять</div>
+						</div>
+					</div>
+
+					<h1>Flex елемент</h1>
+					<h2>Order</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>order: 0;</p>
+							<img src="@img/flexbox/order.png" alt="">
+						</div>
+					</div>
+					<h2>Flex (скорочення)</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>flex: 0 1 auto;</p>
+							<p class="flex-box__details"> (flex-grow flex-shrink flex-basis)</p>	
+						</div>
+					</div>
+					<h2>Flex grow</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>flex-grow: 0;</p>
+							<img src="@img/flexbox/fg0.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>flex-grow: 1;</p>
+							<img src="@img/flexbox/fg1.png" alt="">
+						</div>
+					</div>
+
+					<h3>Спробуйте!</h3>
+					<div class="flex-try">
+						<div class="flex-try__buttons">
+							<button type="button" onclick="flG('0')">0</button>
+							<button type="button" onclick="flG('1')">1</button>
+						</div>
+						<div class="flex-try__block" >
+							<div class="flex-try__item">Один</div>
+							<div class="flex-try__item" id="flexG">Два</div>
+							<div class="flex-try__item">Три</div>
+							<div class="flex-try__item">Чотири</div>
+						</div>
+					</div>
+					<h2>Flex shrink</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>flex-shrink: 0;</p>
+							<img src="@img/flexbox/fs0.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>flex-shrink: 1;</p>
+							<img src="@img/flexbox/fs1.png" alt="">
+						</div>
+					</div>
+					<h2>Flex basis</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>flex-basis: auto;</p> 
+						</div>
+					</div>
+					<h2>Align self</h2>
+					<div class="flex-box__items">
+						<div class="flex-box__item">
+							<p>align-self: auto;</p>
+							<img src="@img/flexbox/ASauto.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-self: flex-start;</p>
+							<img src="@img/flexbox/ASflex-start.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-self: center;</p>
+							<img src="@img/flexbox/AScenter.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-self: flex-end;</p>
+							<img src="@img/flexbox/ASflex-end.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-self: baseline;</p>
+							<img src="@img/flexbox/ASbaseline.png" alt="">
+						</div>
+						<div class="flex-box__item">
+							<p>align-self: stretch;</p>
+							<img src="@img/flexbox/ASstretch.png" alt="">
+						</div>
+					</div>
+					<h3>Спробуйте!</h3>
+					<div class="flex-try">
+						<div class="flex-try__buttons">
+							<button type="button" onclick="flAS('auto')">auto</button>
+							<button type="button" onclick="flAS('flex-start')">flex-start</button>
+							<button type="button" onclick="flAS('center')">center</button>
+							<button type="button" onclick="flAS('flex-end')">flex-end</button>
+							<button type="button" onclick="flAS('baseline')">baseline</button>
+							<button type="button" onclick="flAS('stretch')">stretch</button>
+						</div>
+						<div class="flex-try__block" id="ASCont">
+							<div class="flex-try__item">Один</div>
+							<div class="flex-try__item" id="flexAS">Два</div>
+							<div class="flex-try__item">Три</div>
+							<div class="flex-try__item">Чотири</div>
+							<div class="flex-try__item">П'ять</div>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+				
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+		<script>
+			function flD(setting){	
+				document.getElementById("flexD").style.flexDirection=setting;
+			}
+			function flW(setting){
+				document.getElementById("flexW").style.flexWrap=setting;
+			}
+			function flJ(setting){
+				document.getElementById("flexJ").style.justifyContent=setting;
+			}
+			function flAI(setting){
+				document.getElementById("flexAI").style.alignItems=setting;
+			}
+			function flAC(setting){
+				document.getElementById("flexAC").style.alignContent=setting;
+			}
+			function flG(setting){
+				document.getElementById("flexG").style.flexGrow=setting;
+			}
+			function flAS(setting){
+				document.getElementById("flexAS").style.alignSelf=setting;
+			}
+		</script>
+	</body>
+</html>
